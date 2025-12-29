@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Anlık Mesajlaşma</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Kullanıcı seçim ekranı -->
+  <div id="user-selection" class="user-selection">
+    <div class="selection-container">
+      <h2>Kullanıcı Seçin</h2>
+      <div class="user-buttons">
+        <button class="user-btn" onclick="selectUser('Zeynep 💕')">Zeynep 💕</button>
+        <button class="user-btn" onclick="selectUser('Mert')">Mert</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Ana mesajlaşma ekranı -->
+  <div class="container" id="chat-container" style="display: none;">
+    <div class="header">
+      <h1>💬 Mesajlaşma</h1>
+      <p class="current-user" id="current-user"></p>
+    </div>
+    
+    <div id="messages" class="messages"></div>
+    
+    <div class="input-area">
+      <input type="text" id="message" placeholder="Mesajınızı yazın...">
+      <button onclick="sendMessage()">Gönder</button>
+    </div>
+  </div>
+
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
